@@ -6,174 +6,299 @@
 <title>Prem Dhumal | The Series</title>
 <meta name="description" content="Prem Dhumal, AWS Cloud Engineer. A cinematic portfolio where every project is an Original.">
 <meta name="theme-color" content="#07070a">
-<link rel="preload" as="image" href="prem-800.webp" type="image/webp">
+<link rel="preload" as="image" href="prem-cut-720.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#07070a;--ink2:#0e0e13;--ink3:#16161d;--red:#e5132b;--bone:#f4f1ec;--mist:#a7a6ad;--line:#26262f;--g:clamp(16px,4vw,56px);
---disp:"Bebas Neue",Impact,sans-serif;--sans:"Inter",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+--disp:"Bebas Neue",Impact,sans-serif;--serif:"Instrument Serif",Georgia,serif;--sans:"Inter",system-ui,sans-serif;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--ink)}
 body{margin:0;background:var(--ink);color:var(--bone);font:400 16px/1.6 var(--sans);overflow-x:hidden}
-button{font:inherit;cursor:pointer}
+button{font:inherit;cursor:pointer;color:inherit}
 a{color:inherit}
 :focus-visible{outline:3px solid #fff;outline-offset:3px}
-.disp{font-family:var(--disp);font-weight:400;letter-spacing:.03em;line-height:.95}
+.disp,h2{font-family:var(--disp);font-weight:400;letter-spacing:.03em;line-height:.95}
+.grad{background:linear-gradient(180deg,#fff 30%,#f3a0b4);-webkit-background-clip:text;background-clip:text;color:transparent}
+img{display:block}
 
-/* opening + profiles */
-.stage{position:fixed;inset:0;z-index:50;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+/* stages */
+.stage{position:fixed;inset:0;z-index:60;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;overflow:hidden}
 .stage.hide{display:none}
-.open h1{font-size:clamp(3.4rem,16vw,9rem);margin:0;color:var(--red);animation:rise 1.6s cubic-bezier(.22,1,.36,1) both}
-.open p{font-family:var(--disp);font-size:clamp(1.4rem,5vw,2.6rem);letter-spacing:.5em;margin:10px 0 0 .5em;animation:rise 1.6s .7s cubic-bezier(.22,1,.36,1) both}
-.open small{position:absolute;bottom:calc(28px + env(safe-area-inset-bottom,0px));color:var(--mist);font-size:.85rem}
-@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.96);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
-.who h2{font-size:clamp(2.2rem,7vw,3.6rem);margin:0 0 28px;font-family:var(--disp);font-weight:400;letter-spacing:.04em}
-.profiles{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
-.prof{background:none;border:0;color:var(--mist);width:128px;text-align:center;padding:0}
-.prof i{display:block;width:128px;height:128px;border-radius:8px;margin-bottom:10px;border:3px solid transparent;display:grid;place-items:center;font:400 3.4rem var(--disp);color:#fff;font-style:normal}
-.prof:hover,.prof:focus-visible{color:#fff}
-.prof:hover i{border-color:#fff}
+.open::before{content:"";position:absolute;width:90vmin;height:90vmin;border-radius:50%;background:radial-gradient(closest-side,#e5132b55,transparent);bottom:-10vmin}
+.open>*{position:relative;z-index:1}
+.skip{position:absolute!important;top:calc(16px + env(safe-area-inset-top,0px));right:16px;background:#ffffff14;border:1px solid #ffffff30;border-radius:4px;font-size:.7rem;letter-spacing:.14em;padding:6px 12px;color:var(--mist)}
+.open .name{font-size:clamp(4rem,22vw,11rem);margin:0;animation:rise 1.4s cubic-bezier(.22,1,.36,1) both}
+.open .series{font:400 clamp(1rem,3.4vw,1.5rem) var(--disp);letter-spacing:.5em;margin:6px 0 0 .5em;color:var(--red);animation:rise 1.4s .5s cubic-bezier(.22,1,.36,1) both}
+.open .oport{height:40svh;margin-top:10px;animation:rise 1.6s 1s cubic-bezier(.22,1,.36,1) both;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.open .oport img{height:100%;width:auto}
+.open .role{font-size:.72rem;letter-spacing:.22em;color:#d9d8de;margin:8px 0 14px;animation:rise 1.4s 1.5s both}
+.play{background:#fff;color:#000;border:0;border-radius:999px;font-weight:700;padding:11px 34px;font-size:.95rem;letter-spacing:.06em;animation:rise 1.4s 1.8s both}
+@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.97);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+.who h2{font-size:clamp(2.4rem,7vw,4rem);margin:0 0 28px;letter-spacing:.04em}
+.profiles{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:760px}
+.prof{background:none;border:0;color:var(--mist);width:132px;text-align:center;padding:0}
+.prof i{display:grid;place-items:center;width:132px;height:132px;border-radius:8px;margin-bottom:10px;border:3px solid transparent;font:400 3.2rem var(--disp);font-style:normal;color:#fff;position:relative;overflow:hidden}
+.prof i img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:118%;width:auto}
+.prof i b{position:absolute;top:6px;right:6px;background:var(--red);font:400 .7rem var(--disp);letter-spacing:.1em;padding:0 6px;border-radius:2px}
+.prof:hover,.prof:focus-visible{color:#fff}.prof:hover i{border-color:#fff}
 .prof span{display:block;font-weight:600;color:inherit}
-.prof em{display:block;font-size:.78rem;font-style:normal;line-height:1.3;margin-top:2px}
+.prof em{display:block;font-size:.74rem;font-style:normal;line-height:1.3;margin-top:2px}
+.who p{color:var(--mist);font-size:.82rem;margin:26px 0 0;max-width:46ch}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;padding:calc(12px + env(safe-area-inset-top,0px)) var(--g) 12px;background:linear-gradient(#07070aee,#07070a00)}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;padding:calc(12px + env(safe-area-inset-top,0px)) var(--g) 12px;background:linear-gradient(#07070af2,#07070a00)}
 nav b{font:400 1.9rem var(--disp);color:var(--red);letter-spacing:.06em;margin-right:auto}
-nav a{text-decoration:none;font-size:.9rem;color:var(--mist);font-weight:500}
-nav a:hover{color:#fff}
+nav a{text-decoration:none;font-size:.9rem;color:var(--mist);font-weight:500}nav a:hover{color:#fff}
 nav button{background:none;border:1px solid var(--line);border-radius:4px;color:var(--mist);padding:4px 10px;font-size:.82rem}
-@media(max-width:640px){nav a{display:none}}
+@media(max-width:700px){nav a{display:none}}
 
 /* hero */
-.hero{position:relative;min-height:100svh;padding:110px var(--g) 64px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
-background:radial-gradient(60vw 60vw at 85% 15%,#e5132b55,transparent 70%),radial-gradient(50vw 50vw at 0% 100%,#4b167866,transparent 70%),var(--ink)}
-.photo{position:absolute;z-index:0;top:0;right:0;width:100%;height:68svh;pointer-events:none}
-.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:brightness(.78) contrast(1.08) saturate(.9);display:block}
-.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--ink) 2%,transparent 55%),linear-gradient(90deg,var(--ink) 0,transparent 14%,transparent 86%,var(--ink) 100%),radial-gradient(70% 60% at 50% 30%,transparent,#07070a88)}
-.hero>*:not(.photo){position:relative;z-index:1}
-@media(min-width:900px){.photo{width:46vw;height:100svh;right:2vw}.photo img{object-position:50% 0}.photo::after{background:linear-gradient(0deg,var(--ink) 0,transparent 28%),linear-gradient(90deg,var(--ink) 0,transparent 40%,transparent 88%,var(--ink) 100%),radial-gradient(70% 60% at 50% 30%,transparent,#07070a66)}}
-.tag{color:var(--mist);font-weight:500;margin:0 0 10px}
-.hero h1{font-size:clamp(4.2rem,17vw,11rem);margin:0;text-shadow:0 2px 24px #000}
-@media(min-width:900px){.hero>*:not(.photo){max-width:52vw}}
-.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0;color:var(--mist);font-size:.95rem}
-.meta b{color:#46d369;font-weight:600}
-.hero p.lead{max-width:52ch;text-shadow:0 1px 12px #000;margin:0 0 26px;font-size:1.05rem}
-.btns{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:5px;border:0;font-weight:700;text-decoration:none;font-size:1rem}
-.btn.w{background:#fff;color:#000}.btn.g{background:#ffffff2e;color:#fff}
-.btn:hover{opacity:.85}
+.hero{position:relative;min-height:100svh;padding:100px var(--g) 28px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+background:radial-gradient(70vw 70vw at 82% 28%,#e5132b55,transparent 68%),radial-gradient(50vw 50vw at 0% 100%,#4b167855,transparent 70%),var(--ink)}
+.hport{position:absolute;z-index:0;top:56px;right:0;left:0;height:62svh;display:flex;justify-content:center;pointer-events:none;-webkit-mask-image:linear-gradient(#000 62%,transparent 98%);mask-image:linear-gradient(#000 62%,transparent 98%)}
+.hport img{height:100%;width:auto;max-width:none}
+.hero>*:not(.hport){position:relative;z-index:1}
+.mark{display:flex;align-items:center;gap:8px;font:400 1rem var(--disp);letter-spacing:.3em;color:var(--mist);margin:0 0 6px}
+.mark i{background:var(--red);color:#fff;font-style:normal;padding:0 7px;border-radius:2px}
+.hero h1{font-size:clamp(5rem,23vw,11rem);margin:0}
+.series{font:400 1.2rem var(--disp);letter-spacing:.5em;color:var(--red);margin:4px 0 14px}
+.meta{font-size:.82rem;font-weight:600;color:#e6e5ea;margin:0 0 6px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.hero .role{font:400 1.15rem var(--disp);letter-spacing:.14em;margin:0 0 8px}
+.lead{max-width:54ch;color:#d4d3d9;margin:0 0 18px;font-size:.98rem}
+.btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:5px;border:0;font-weight:700;text-decoration:none;font-size:.95rem}
+.btn.w{background:#fff;color:#000}.btn.g{background:#ffffff2e;color:#fff;backdrop-filter:blur(6px)}.btn:hover{opacity:.85}
+@media(min-width:900px){
+ .hport{left:auto;right:3vw;width:46vw;top:64px;height:calc(100svh - 64px);justify-content:flex-end}
+ .hero{padding-bottom:36px}.hero>*:not(.hport){max-width:50vw}
+}
+.explore{margin-top:26px}
+.explore h3{font:600 1.15rem var(--sans);margin:0 0 10px}
 
-/* sections */
-main{display:flex;flex-direction:column}
-section{padding:48px var(--g)}
-section h2{font-size:clamp(2rem,5vw,3rem);margin:0 0 6px}
-.sub{color:var(--mist);margin:0 0 22px;max-width:60ch}
-
-/* rails */
-.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px var(--g) 18px;margin:0 calc(var(--g) * -1);scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+/* rails and cards */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px var(--g) 16px;margin:0 calc(var(--g) * -1);scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 .rail>*{scroll-snap-align:start;flex:0 0 auto}
-.card{width:min(74vw,270px);aspect-ratio:2/3;border-radius:8px;border:0;padding:18px;text-align:left;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .25s}
+.ep-card{width:min(60vw,230px);aspect-ratio:16/10;border-radius:8px;border:0;padding:12px;text-align:left;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;text-decoration:none;transition:transform .25s}
+.ep-card:hover{transform:scale(1.05)}
+.ep-card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,#000000b8)}
+.ep-card>*{position:relative;z-index:1}
+.ep-card small{font:400 .75rem var(--disp);letter-spacing:.14em;color:#ffffffcc}
+.ep-card b{font:400 1.5rem/1 var(--disp);letter-spacing:.03em}
+.ep-card .bar{height:3px;background:#ffffff40;margin-top:8px;border-radius:2px}.ep-card .bar i{display:block;height:100%;background:var(--red);border-radius:2px}
+
+section{padding:56px var(--g)}
+section h2{font-size:clamp(2.4rem,6.5vw,4rem);margin:0 0 6px}
+.sub{color:var(--mist);margin:0 0 24px;max-width:60ch}
+main{display:flex;flex-direction:column}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:.84rem;color:#dcdbe0}
+
+/* about */
+.abt{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:start}
+.aport{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;background:radial-gradient(90% 70% at 50% 40%,#8b1030,#2a0612 75%);display:flex;justify-content:center;align-items:flex-end}
+.aport img{height:104%;width:auto;max-width:none}
+.aport::after{content:"";position:absolute;inset:auto 0 0 0;height:36%;background:linear-gradient(transparent,#000000cc)}
+.aport .cap{position:absolute;left:16px;bottom:14px;z-index:1}
+.aport small{display:block;color:var(--red);font:400 .8rem var(--disp);letter-spacing:.2em}
+.aport b{font:400 1.7rem var(--disp);letter-spacing:.04em}
+blockquote{margin:0;font:italic 400 clamp(1.5rem,3.6vw,2.3rem)/1.18 var(--serif)}
+cite{display:block;color:var(--mist);font-size:.85rem;margin:10px 0 22px;font-style:normal}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin:0 0 18px}
+.facts dt{font-size:.7rem;letter-spacing:.18em;color:var(--mist)}
+.facts dd{margin:2px 0 0;font-weight:600}.facts dd small{display:block;font-weight:400;color:var(--mist);font-size:.82rem}
+@media(max-width:760px){.abt{grid-template-columns:1fr}.aport{aspect-ratio:1/1}}
+
+/* full story */
+.sheet2{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:18px}
+.paper{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:clamp(18px,3vw,30px)}
+.paper .star{font:400 .8rem var(--disp);letter-spacing:.3em;color:var(--red)}
+.paper h3.nm{font:400 clamp(2rem,5vw,3rem) var(--disp);margin:0 0 14px;letter-spacing:.03em}
+.cols{display:grid;grid-template-columns:1.1fr 1fr;gap:6px 30px}
+.paper h4{font:400 1rem var(--disp);letter-spacing:.18em;color:var(--red);margin:16px 0 6px}
+.paper p{margin:0 0 8px;font-size:.9rem;color:#d4d3d9}.paper p b{color:#fff}.paper p small{display:block;color:var(--mist)}
+.side{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:22px;align-self:start}
+.side h3{font:italic 400 1.7rem/1.1 var(--serif);margin:0 0 8px}.side p{color:var(--mist);font-size:.88rem;margin:0 0 16px}
+.side .btn{display:flex;justify-content:center;width:100%;margin-bottom:10px}
+.st{display:flex;justify-content:space-between;margin-top:8px;text-align:center}.st b{display:block;font:400 2rem var(--disp)}.st span{font-size:.7rem;color:var(--mist);letter-spacing:.1em}
+@media(max-width:820px){.sheet2,.cols{grid-template-columns:1fr}}
+
+/* skill universe */
+.uni{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:24px}
+.gl{display:flex;flex-direction:column;gap:4px}
+.gb{background:none;border:0;border-left:3px solid transparent;text-align:left;padding:10px 14px;border-radius:0 6px 6px 0;color:var(--mist)}
+.gb b{display:block;font:400 clamp(1.6rem,3.4vw,2.2rem)/1 var(--disp);letter-spacing:.03em;color:#cfced4}
+.gb small{font-size:.78rem}
+.gb.on{background:#ffffff14;border-color:#46d369}.gb.on b{color:#fff}
+.gp{background:var(--ink2);border:1px solid var(--line);border-radius:10px;padding:22px;min-height:220px}
+.gp h3{font:600 1rem var(--sans);margin:0 0 4px}.gp p{color:var(--mist);font-size:.88rem;margin:0 0 14px}
+.gp .chips li{font-size:.95rem;padding:8px 14px;border-radius:8px}
+@media(max-width:760px){.uni{grid-template-columns:1fr}.gl{flex-direction:row;overflow-x:auto}.gb{border-left:0;border-bottom:3px solid transparent;white-space:nowrap;border-radius:6px 6px 0 0}.gb.on{border-color:#46d369}}
+
+/* journey */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:12px}
+.tab{flex:0 0 auto;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 18px;text-align:left;color:var(--mist);font-size:.8rem;line-height:1.25}
+.tab small{display:block;font:400 .72rem var(--disp);letter-spacing:.14em}
+.tab.on{background:#fff;color:#000;border-color:#fff}
+.sh{font:400 clamp(2rem,5vw,3.2rem)/1 var(--disp);margin:0 0 4px}.sh span{color:var(--mist)}
+.eps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:18px}
+.ep{border-radius:10px;overflow:hidden;background:var(--ink2);border:1px solid var(--line);text-align:left;padding:0;display:block;width:100%}
+.ep .art{height:120px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.ep .art small{font:400 .75rem var(--disp);letter-spacing:.14em;color:#ffffffcc}
+.ep .art b{font:400 1.7rem/1 var(--disp);letter-spacing:.03em}
+.ep .tx{padding:12px 14px 14px}.ep .tx time{font-size:.78rem;color:var(--mist)}.ep .tx p{margin:4px 0 0;font-size:.9rem;color:#d4d3d9}
+
+/* originals */
+.card{width:min(64vw,230px);aspect-ratio:2/3;border-radius:8px;border:0;padding:16px;text-align:left;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .25s}
 .card:hover{transform:scale(1.05)}
 .card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#000000cc)}
 .card>*{position:relative;z-index:1}
-.card .svc{position:absolute;top:16px;left:18px;z-index:1;font:400 .95rem var(--disp);letter-spacing:.12em;opacity:.85}
-.card .n{position:absolute;top:-6px;right:10px;z-index:1;font:400 7rem/1 var(--disp);color:#ffffff22}
-.card h3{font:400 2rem/1 var(--disp);letter-spacing:.03em;margin:0 0 6px}
-.card p{margin:0;font-size:.85rem;color:#ffffffcc;line-height:1.35}
-.nbadge{background:var(--red);font:400 .8rem var(--disp);letter-spacing:.1em;padding:1px 6px;border-radius:2px;position:absolute;top:14px;right:14px;z-index:1}
-
-/* skills */
-.genres{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.genre{background:var(--ink2);border:1px solid var(--line);border-radius:8px;padding:20px}
-.genre h3{font:400 1.7rem var(--disp);letter-spacing:.04em;margin:0 0 10px;color:var(--red)}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
-.chips li{background:var(--ink3);border-radius:999px;padding:3px 12px;font-size:.85rem;color:#dcdbe0}
-
-/* journey */
-.seasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.ep{background:var(--ink2);border:1px solid var(--line);border-radius:8px;padding:20px}
-.ep small{color:var(--red);font:400 1.1rem var(--disp);letter-spacing:.12em}
-.ep h3{margin:2px 0 2px;font-size:1.1rem}
-.ep time{color:var(--mist);font-size:.85rem}
-.ep p{color:#cfced4;margin:8px 0 0;font-size:.95rem}
+.card .svc{position:absolute;top:14px;left:16px;z-index:1;font:400 .9rem var(--disp);letter-spacing:.12em;opacity:.85}
+.card .n{position:absolute;top:-6px;right:10px;z-index:1;font:400 6rem/1 var(--disp);color:#ffffff22}
+.card h3{font:400 1.9rem/1 var(--disp);letter-spacing:.03em;margin:0 0 6px}
+.card p{margin:0;font-size:.82rem;color:#ffffffcc;line-height:1.35}
 
 /* cta */
 .cta{text-align:center;padding:90px var(--g) 70px;background:radial-gradient(60vw 40vw at 50% 100%,#e5132b33,transparent 70%)}
 .cta h2{font-size:clamp(3rem,11vw,7rem)}
 .links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
-footer{text-align:center;color:var(--mist);font-size:.82rem;padding:0 var(--g) 36px}
+footer{text-align:center;color:var(--mist);font-size:.8rem;padding:0 var(--g) 36px}
 
-/* modal */
-.modal{position:fixed;inset:0;z-index:40;background:#000000d9;display:none;align-items:center;justify-content:center;padding:16px}
+/* modal + reel */
+.modal{position:fixed;inset:0;z-index:50;background:#000000d9;display:none;align-items:center;justify-content:center;padding:16px}
 .modal.on{display:flex}
-.sheet{background:var(--ink2);border-radius:10px;max-width:640px;width:100%;max-height:92svh;overflow:auto;border:1px solid var(--line)}
-.sheet .top{padding:56px 26px 22px;position:relative}
-.sheet .top h3{font:400 clamp(2.4rem,8vw,3.6rem)/1 var(--disp);margin:0}
-.sheet .body{padding:0 26px 26px}
-.sheet ul{padding-left:20px;color:#d6d5da}
+.msheet{background:var(--ink2);border-radius:10px;max-width:640px;width:100%;max-height:92svh;overflow:auto;border:1px solid var(--line)}
+.msheet .top{padding:56px 26px 22px;position:relative}
+.msheet .top h3{font:400 clamp(2.4rem,8vw,3.6rem)/1 var(--disp);margin:0}
+.msheet .body{padding:0 26px 26px}.msheet ul{padding-left:20px;color:#d6d5da}.msheet ul.chips,.msheet ul.flow{padding-left:0}
+.msheet h4{font:400 1.3rem var(--disp);letter-spacing:.06em;color:var(--red);margin:20px 0 8px}
 .x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:#000000aa;color:#fff;font-size:1.3rem}
-
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0;list-style:none}
+.flow li{background:var(--ink3);border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-size:.85rem}
+.flow li+li::before{content:"\2192";margin-right:6px;color:var(--red)}
+.plinks{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}.plinks a{padding:8px 18px;font-size:.9rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.shots img{width:100%;border-radius:6px;border:1px solid var(--line)}
+.reel{position:fixed;inset:0;z-index:70;background:#000;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.reel.on{display:flex}
+.reel .bars{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));left:16px;right:16px;display:flex;gap:5px}
+.reel .bars i{flex:1;height:3px;background:#ffffff33;border-radius:2px;overflow:hidden}.reel .bars i b{display:block;height:100%;width:0;background:#fff}
+.reel h2{font-size:clamp(3rem,14vw,8rem);margin:0;animation:rise .9s both}.reel p{font-size:1.2rem;color:var(--mist);margin:12px 0 0;max-width:30ch;animation:rise .9s .15s both}
+.reel .x{top:calc(26px + env(safe-area-inset-top,0px))}
+.rv{opacity:0}
+.rv.in{opacity:1;animation:rvIn .85s cubic-bezier(.22,1,.36,1) var(--d,0ms) backwards}
+.rvw .w{display:inline-block;opacity:0;margin-right:.22em}
+.rvw.in .w{opacity:1;animation:rvIn .8s cubic-bezier(.22,1,.36,1) var(--d,0ms) backwards}
+@keyframes rvIn{from{opacity:0;transform:translateY(34px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){.rv,.rvw .w{opacity:1!important;animation:none!important}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<div class="stage open" id="open" role="button" tabindex="0" aria-label="Skip intro">
-  <h1 class="disp">PREM</h1>
-  <p>THE SERIES</p>
-  <small>Tap to skip</small>
+<div class="stage open" id="open">
+  <button class="skip" id="skip" type="button">SKIP INTRO</button>
+  <h1 class="disp name grad">PREM</h1>
+  <p class="series">THE SERIES</p>
+  <div class="oport"><img src="prem-cut-420.webp" alt="Prem Dhumal" width="420" height="653"></div>
+  <p class="role">AWS CLOUD ENGINEER · LINUX · NETWORKING</p>
+  <button class="play" id="play" type="button">&#9654; PLAY</button>
 </div>
 
 <div class="stage who hide" id="who">
-  <h2>Who's watching?</h2>
+  <h2 class="disp">Who's watching?</h2>
   <div class="profiles" id="profiles"></div>
+  <p>Every profile watches the same true story of Prem Dhumal. It only changes what plays first.</p>
 </div>
 
 <nav aria-label="Main">
   <b>PREM</b>
-  <a href="#projects">Originals</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  <a href="#about">About</a><a href="#resume">Story</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
   <button id="switch" type="button">Switch profile</button>
 </nav>
 
 <header class="hero" id="top">
-  <div class="photo"><img src="prem-800.webp" srcset="prem-480.webp 480w, prem-800.webp 800w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="1200" alt="Prem Dhumal in a navy blazer and white shirt, standing in an office lobby" fetchpriority="high"></div>
-  <p class="tag">A cloud portfolio series</p>
-  <h1 class="disp">PREM<br>DHUMAL</h1>
-  <div class="meta"><b>Now streaming</b><span>AWS Cloud Engineer</span><span>6 Originals</span><span>Linux · Networking · Web hosting</span></div>
-  <p class="lead">Entry-level AWS engineer who deploys real applications: static sites on CloudFront, LAMP and Node.js servers on EC2, and a three-tier Java app with a private database. Earlier seasons were quality operations, research, and data reporting.</p>
+  <div class="hport"><img src="prem-cut-720.webp" srcset="prem-cut-420.webp 420w, prem-cut-720.webp 720w" sizes="(min-width:900px) 46vw, 80vw" width="720" height="1120" alt="Prem Dhumal in a navy blazer and white shirt" fetchpriority="high"></div>
+  <p class="mark"><i>P</i> SERIES</p>
+  <h1 class="disp grad">PREM</h1>
+  <p class="series">THE SERIES</p>
+  <p class="meta"><span>MBA 2022 – 2024</span><span>AWS</span><span>6 Originals</span><span>20+ AWS tools</span></p>
+  <p class="role">AWS CLOUD ENGINEER · LINUX · NETWORKING</p>
+  <p class="lead">An entry-level AWS Cloud Engineer who deploys real applications: static sites on CloudFront, LAMP and Node.js servers on EC2, and a three-tier Java app with a private database.</p>
   <div class="btns">
-    <a class="btn w" href="#projects">&#9654; Watch projects</a>
-    <a class="btn g" href="Prem_Dhumal_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+    <button class="btn w" id="intro" type="button">&#9654; Play Intro</button>
+    <a class="btn g" href="Prem_Dhumal_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
   </div>
+  <div class="explore"><h3>Continue Exploring</h3><div class="rail" id="explore"></div></div>
 </header>
 
 <main id="main">
-  <section id="projects">
-    <h2 class="disp">Originals</h2>
-    <p class="sub">Six projects, each built and tested on AWS. Tap a poster for details.</p>
-    <div class="rail" id="rail"></div>
+  <section id="about">
+    <h2 class="disp">About me</h2>
+    <div class="abt">
+      <div class="aport"><img src="prem-cut-720.webp" alt="" loading="lazy" width="720" height="1120"><div class="cap"><small>STARRING</small><b>PREM DHUMAL</b></div></div>
+      <div>
+        <blockquote>“An entry-level AWS Cloud Engineer with an MBA in Business Analytics, building and hosting real applications on EC2, S3, CloudFront, VPC and RDS.”</blockquote>
+        <cite>— Prem Dhumal</cite>
+        <dl class="facts">
+          <div><dt>NOW</dt><dd>AWS Cloud Engineering<small>Entry-level, open to roles</small></dd></div>
+          <div><dt>BACKGROUND</dt><dd>MBA, Business Analytics<small>Aug 2022 – Aug 2024</small></dd></div>
+          <div><dt>PRIMARY FOCUS</dt><dd>AWS<small>with Linux, Nginx, Apache</small></dd></div>
+          <div><dt>LANGUAGES</dt><dd>Marathi, Hindi, English</dd></div>
+        </dl>
+        <ul class="chips"><li>Cloud Computing (AWS)</li><li>Linux</li><li>Networking</li><li>Cricket</li><li>Trekking</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2 class="disp">The full story</h2>
+    <p class="sub">My resume, episode by episode.</p>
+    <div class="sheet2">
+      <div class="paper">
+        <div class="star">STARRING</div><h3 class="nm">Prem Dhumal</h3>
+        <div class="cols">
+          <div>
+            <h4>EDUCATION</h4>
+            <p><b>MBA, Business Analytics &amp; Marketing</b><small>Aug 2022 – Aug 2024 · 65%</small></p>
+            <p><b>B.Com</b><small>May 2019 – May 2021 · 70%</small></p>
+            <h4>WORK EXPERIENCE</h4>
+            <p><b>Quality Team, Cummings Company</b><small>Nov 2023 – Nov 2024</small>Checked parts, found defects, and analyzed data for reports.</p>
+            <p><b>Contact Discovery, XDBS Worldwide</b><small>Sep 2023 – Nov 2023</small>Found prospect contacts with LinkedIn, ZoomInfo, Seamless.</p>
+            <p><b>Business Research, Manalytics</b><small>May 2023 – Sep 2023</small>Researched organizations and key contacts.</p>
+            <h4>PROJECTS</h4><div id="rp"></div>
+          </div>
+          <div><h4>SKILLS</h4><div id="rs"></div><h4>INTERESTS</h4><p>Cricket, Trekking</p><h4>COURSES</h4><p>MS-CIT, Tally</p></div>
+        </div>
+      </div>
+      <aside class="side">
+        <h3>Every episode, on one page.</h3>
+        <p>Education, experience, projects and skills. View it here or take a copy with you.</p>
+        <a class="btn w" href="Prem_Dhumal_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        <a class="btn g" href="Prem_Dhumal_Resume.pdf" download>Download Resume</a>
+        <div class="st"><div><b>6</b><span>ORIGINALS</span></div><div><b>20+</b><span>AWS TOOLS</span></div><div><b>3</b><span>SEASONS</span></div></div>
+      </aside>
+    </div>
   </section>
 
   <section id="skills">
-    <h2 class="disp">Skills by genre</h2>
-    <p class="sub">Tools I use to build, host, and connect applications.</p>
-    <div class="genres" id="genres"></div>
+    <h2 class="disp">My skill universe</h2>
+    <p class="sub">Tap a genre to see what's inside.</p>
+    <div class="uni"><div class="gl" id="gl"></div><div class="gp" id="gp"></div></div>
   </section>
 
   <section id="journey">
     <h2 class="disp">My journey</h2>
-    <p class="sub">Three seasons: research, contact discovery, and quality operations, then cloud.</p>
-    <div class="seasons" id="seasons"></div>
+    <p class="sub">Five seasons. Pick one to watch.</p>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div id="season"></div>
   </section>
 
-  <section id="education">
-    <h2 class="disp">Education</h2>
-    <p class="sub">&nbsp;</p>
-    <div class="seasons">
-      <div class="ep"><small>MBA</small><h3>Business Analytics and Marketing</h3><time>Aug 2022 to Aug 2024 · 65%</time></div>
-      <div class="ep"><small>B.COM</small><h3>Bachelor of Commerce</h3><time>May 2019 to May 2021 · 70%</time><p>Courses: MS-CIT, Tally. Languages: Marathi, Hindi, English.</p></div>
-    </div>
+  <section id="projects">
+    <h2 class="disp">My projects</h2>
+    <p class="sub">Six Originals, each built and tested on AWS. Tap a poster for details.</p>
+    <div class="rail" id="rail"></div>
   </section>
 </main>
 
@@ -190,90 +315,170 @@ footer{text-align:center;color:var(--mist);font-size:.82rem;padding:0 var(--g) 3
 <footer>A fictional streaming-style portfolio. Not affiliated with any streaming service.</footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
-  <div class="sheet">
+  <div class="msheet">
     <div class="top" id="mtop"><button class="x" id="close" type="button" aria-label="Close">&times;</button><h3 id="mt"></h3></div>
-    <div class="body"><p id="md" style="color:#d6d5da;margin-top:0"></p><ul id="mb"></ul><ul class="chips" id="mc"></ul></div>
+    <div class="body"><p id="md" style="color:#d6d5da;margin-top:0"></p><h4>Architecture</h4><ul class="flow" id="mf"></ul><h4>What I built</h4><ul id="mb"></ul><h4 id="hp">Proof</h4><div id="mp"></div><h4>Tech used</h4><ul class="chips" id="mc"></ul></div>
   </div>
 </div>
 
+<div class="reel" id="reel" role="dialog" aria-modal="true" aria-label="Intro">
+  <div class="bars" id="rbars"></div>
+  <button class="x" id="rclose" type="button" aria-label="Close intro">&times;</button>
+  <h2 class="disp grad" id="rh"></h2><p id="rp2"></p>
+</div>
+
 <script>
+/* ===== EDIT HERE: proof for each project (same order as the posters) =====
+   gh: GitHub repo link, live: working site link, video: YouTube link,
+   shots: screenshot file names kept in the "proof" folder, e.g. ["java-1.png"] */
+var proof=[
+ {gh:"https://github.com/premcloud7/3-Tier-Project-JAVA",live:"",video:"",shots:[]},   /* Three-Tier Java App */
+ {gh:"https://github.com/premcloud7/AWS-Static-Website-CDN",live:"",video:"",shots:[]},   /* S3 + CloudFront */
+ {gh:"https://github.com/premcloud7/Dynamic-PHP-Website-AWS-EC2",live:"",video:"",shots:[]},   /* LAMP PHP Site */
+ {gh:"https://github.com/premcloud7/NodeJS-Express-Dynamic-Website",live:"",video:"",shots:[]},   /* Node.js on EC2 */
+ {gh:"https://github.com/premcloud7/AWS-EC2-Linux-Web-Server",live:"",video:"",shots:[]},   /* Linux Web Server */
+ {gh:"https://github.com/premcloud7/AWS-DynamoDB-Student-Management",live:"",video:"",shots:[]}    /* Student Management */
+];
 var projects=[
- {t:"Three-Tier Java App",svc:"EC2 · VPC · RDS",h:350,tag:"Public and private subnets, Nginx, Tomcat, MySQL.",d:"A Java web application on a three-tier architecture, with the database kept private.",b:["Configured public and private subnet architecture","Set up Nginx as a reverse proxy to Tomcat","Connected the app to RDS MySQL through JDBC"],s:["EC2","VPC","Subnets","Nginx","Tomcat","Java","RDS MySQL","JDBC"]},
- {t:"S3 + CloudFront",svc:"S3 · CLOUDFRONT",h:215,tag:"A static site served over HTTPS.",d:"A static website hosted on S3 and delivered through CloudFront.",b:["Configured the S3 origin with Origin Access Control","Served the site over HTTPS","Verified access through the distribution URL"],s:["S3","CloudFront","OAC","HTTPS","HTML"]},
- {t:"LAMP PHP Site",svc:"EC2 · LAMP",h:28,tag:"Dynamic PHP site with automated setup.",d:"A dynamic PHP website on Amazon Linux with a database behind it.",b:["Automated first-boot setup with User Data and Bash","Ran PHP through PHP-FPM on Apache","Verified form submissions stored in MariaDB"],s:["EC2","Amazon Linux","Apache","PHP-FPM","MariaDB","Bash","User Data"]},
- {t:"Node.js on EC2",svc:"EC2 · NODE.JS",h:140,tag:"Express app cloned, configured, tested.",d:"A Node.js and Express application deployed on a Linux server.",b:["Cloned the source from GitHub over SSH","Installed dependencies with npm","Configured port 3000 and tested the running app"],s:["EC2","Amazon Linux 2023","Node.js","Express","npm","Git","SSH"]},
- {t:"Linux Web Server",svc:"EC2 · APACHE",h:265,tag:"Apache on Amazon Linux 2023.",d:"A first web server on EC2, reachable from the internet.",b:["Installed and started Apache HTTPD","Opened the right ports with Security Groups","Verified the HTML page through the public IP"],s:["EC2","Apache","Security Groups","HTML"]},
- {t:"Student Management",svc:"DYNAMODB",h:320,tag:"NoSQL table with full record operations.",d:"A student records system built on DynamoDB.",b:["Created a table with Student-ID as partition key","Added and retrieved records","Updated and deleted records"],s:["DynamoDB","NoSQL"]}
+ {t:"Three-Tier Java App",ep:"The Architect",svc:"EC2 · VPC · RDS",h:350,tag:"Public and private subnets, Nginx, Tomcat, MySQL.",d:"A Java web application on a three-tier architecture, with the database kept private.",b:["Configured public and private subnet architecture","Set up Nginx as a reverse proxy to Tomcat","Connected the app to RDS MySQL through JDBC"],s:["EC2","VPC","Subnets","Nginx","Tomcat","Java","RDS MySQL","JDBC"],f:["User","Nginx reverse proxy","Tomcat + Java app","RDS MySQL (JDBC)"]},
+ {t:"S3 + CloudFront",ep:"The Publisher",svc:"S3 · CLOUDFRONT",h:215,tag:"A static site served over HTTPS.",d:"A static website hosted on S3 and delivered through CloudFront.",b:["Configured the S3 origin with Origin Access Control","Served the site over HTTPS","Verified access through the distribution URL"],s:["S3","CloudFront","OAC","HTTPS","HTML"],f:["User","CloudFront (HTTPS)","S3 bucket (OAC)"]},
+ {t:"LAMP PHP Site",ep:"The Automator",svc:"EC2 · LAMP",h:28,tag:"Dynamic PHP site with automated setup.",d:"A dynamic PHP website on Amazon Linux with a database behind it.",b:["Automated first-boot setup with User Data and Bash","Ran PHP through PHP-FPM on Apache","Verified form submissions stored in MariaDB"],s:["EC2","Amazon Linux","Apache","PHP-FPM","MariaDB","Bash","User Data"],f:["User","Apache + PHP-FPM on EC2","MariaDB"]},
+ {t:"Node.js on EC2",ep:"The Deployer",svc:"EC2 · NODE.JS",h:140,tag:"Express app cloned, configured, tested.",d:"A Node.js and Express application deployed on a Linux server.",b:["Cloned the source from GitHub over SSH","Installed dependencies with npm","Configured port 3000 and tested the running app"],s:["EC2","Amazon Linux 2023","Node.js","Express","npm","Git","SSH"],f:["User","EC2 port 3000","Node.js + Express"]},
+ {t:"Linux Web Server",ep:"The First Server",svc:"EC2 · APACHE",h:265,tag:"Apache on Amazon Linux 2023.",d:"A first web server on EC2, reachable from the internet.",b:["Installed and started Apache HTTPD","Opened the right ports with Security Groups","Verified the HTML page through the public IP"],s:["EC2","Apache","Security Groups","HTML"],f:["User","Public IP","Apache on EC2"]},
+ {t:"Student Management",ep:"The Data Keeper",svc:"DYNAMODB",h:320,tag:"NoSQL table with full record operations.",d:"A student records system built on DynamoDB.",b:["Created a table with Student-ID as partition key","Added and retrieved records","Updated and deleted records"],s:["DynamoDB","NoSQL"],f:["Student-ID key","DynamoDB table","Add, get, update, delete"]}
 ];
 var skills=[
- ["AWS Cloud",["EC2","AMI","EBS","Elastic IP","S3","VPC","Subnets","Internet Gateway","NAT Gateway","VPC Peering","ALB","Auto Scaling","CloudFront","CloudFormation","Elastic Beanstalk","CloudWatch","Lambda","DynamoDB","Route 53","IAM Roles","AWS CLI"]],
- ["Linux and Networking",["Linux commands","Permissions","Users and groups","SSH","Services","OSI model","Subnetting","DNS","NAT","HTTP/HTTPS","Ports"]],
- ["Web and Database",["Apache","Nginx","Virtual hosts","PHP","PHP-FPM","Node.js","npm","MySQL","MariaDB","SQL"]],
- ["Tools and Strengths",["Git/GitHub","MS-CIT","Tally","Data analysis","Communication","Problem solving","Teamwork"]]
+ ["AWS Cloud","Compute, network and storage",["EC2","AMI","EBS","Elastic IP","S3","VPC","Subnets","Internet Gateway","NAT Gateway","Route Tables","VPC Peering","ALB","Target Groups","Auto Scaling","Launch Templates","CloudFront","CloudFormation","Elastic Beanstalk","CloudWatch","Lambda","DynamoDB","Route 53","RDS migration (basics)","IAM Roles","AWS CLI"]],
+ ["Linux and Networking","Servers and traffic",["Linux commands","File and directory management","Permissions","Users and groups","SSH","Service management","OSI model","IP addressing","Subnetting","DNS","NAT","HTTP/HTTPS","Ports and protocols"]],
+ ["Web and Database","Serving and storing",["Apache (HTTPD)","Nginx","Website hosting","Virtual hosts","PHP","PHP-FPM","Node.js","npm","MySQL","MariaDB","SQL basics"]],
+ ["Tools and Strengths","How I work",["Git/GitHub (basic)","MS-CIT","Tally","Data analysis","Communication","Problem solving","Teamwork","Self-motivated"]]
 ];
 var seasons=[
- ["Season 3","Quality Team, Cummings Company, Phaltan","Nov 2023 to Nov 2024","Checked parts, identified defects, recorded system transactions on a handheld terminal, and analyzed data for reports."],
- ["Season 2","Contact Discovery, XDBS Worldwide","Sep 2023 to Nov 2023","Found prospect and company contacts using LinkedIn, ZoomInfo, and Seamless."],
- ["Season 1","Business Research, Manalytics B2B ITES","May 2023 to Sep 2023","Researched organizations and key contacts and collected business information for project needs."]
+ {n:"The Beginning",y:"2019 – 2021",d:"Where the foundation was laid.",e:[["The Foundation","B.Com","May 2019 – May 2021 · 70%","Bachelor of Commerce.",210],["The Toolkit","MS-CIT and Tally","","Computer basics and accounting software.",260]]},
+ {n:"The Business World",y:"2022 – 2024",d:"Analytics, marketing, and research.",e:[["The Analyst","MBA, Business Analytics and Marketing","Aug 2022 – Aug 2024 · 65%","Learned to work with data and explain it.",350],["The Researcher","Business Research, Manalytics","May 2023 – Sep 2023","Researched organizations and key contacts for project needs.",28],["The Connector","Contact Discovery, XDBS Worldwide","Sep 2023 – Nov 2023","Found prospect and company contacts with LinkedIn, ZoomInfo, and Seamless.",140]]},
+ {n:"The Quality Floor",y:"2023 – 2024",d:"Precision, process, and reports.",e:[["The Inspector","Quality Team, Cummings Company","Nov 2023 – Nov 2024","Checked parts, identified defects, recorded transactions on a handheld terminal, and analyzed data for reports.",215]]},
+ {n:"Building in the Cloud",y:"Now",d:"Six Originals, deployed on AWS.",p:1},
+ {n:"What's Next",y:"Next",d:"The next season is open.",e:[["Your Team?","Entry-level AWS Cloud Engineer","Open to roles","Let's build the next episode together.",350]]}
 ];
 var profiles=[
- {n:"Recruiter",b:"Resume, skills and journey first",c:"#4cc9ff",o:{journey:0,education:1,skills:2,projects:3}},
- {n:"Developer",b:"Projects and stack first",c:"#46e3a8",o:{projects:0,skills:1,journey:2,education:3}},
- {n:"Explorer",b:"The full series, in order",c:"#e5132b",o:{projects:0,skills:1,journey:2,education:3}}
+ {n:"Prem",b:"The full series, in order",c:"#e5132b",img:1,o:{about:0,journey:1,projects:2,skills:3,resume:4}},
+ {n:"Recruiter",b:"Resume, skills and projects first",c:"#4cc9ff",ic:"R",o:{resume:0,skills:1,projects:2,about:3,journey:4}},
+ {n:"Developer",b:"Projects and stack first",c:"#46e3a8",ic:"</>",o:{projects:0,skills:1,journey:2,about:3,resume:4}},
+ {n:"Creative",b:"The story arc first",c:"#f0a030",ic:"\u2726",o:{journey:0,about:1,projects:2,skills:3,resume:4}}
 ];
+var explore=[["The Full Story","#resume",270,"01"],["About Me","#about",350,"02"],["My Skills","#skills",215,"03"],["My Projects","#top",28,"04"],["My Journey","#journey",140,"05"]];
+
 function $(i){return document.getElementById(i)}
-function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h)e.innerHTML=h;return e}
-function bg(h){return"linear-gradient(160deg,hsl("+h+" 70% 38%),hsl("+((h+40)%360)+" 60% 14%))"}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function bg(h){return"linear-gradient(160deg,hsl("+h+" 72% 40%),hsl("+((h+40)%360)+" 60% 14%))"}
+var RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+function rv(e,d){if(RM)return;e.classList.add("rv");e.style.setProperty("--d",d+"ms");io.observe(e)}
+function rvh(h){if(RM)return;var w=h.textContent.trim().split(/\s+/);h.innerHTML=w.map(function(x,i){return'<span class="w" style="--d:'+(i*90)+'ms">'+x+'</span>'}).join(" ");h.classList.add("rvw");io.observe(h)}
+function grp(sel,step){[].forEach.call(document.querySelectorAll(sel),function(e,i){rv(e,Math.min(i,8)*step)})}
+function heroIn(){if(RM)return;[].forEach.call(document.querySelector(".hero").children,function(e,i){e.classList.remove("in");e.classList.add("rv");e.style.setProperty("--d",(150+i*110)+"ms");void e.offsetWidth;e.classList.add("in")})}
 
-var rail=$("rail");
+/* explore rail */
+explore.forEach(function(x,i){
+  var a=el("a","ep-card",'<small>EPISODE '+x[3]+'</small><b>'+x[0]+'</b><div class="bar"><i style="width:'+[100,60,35,80,20][i]+'%"></i></div>');
+  a.href=x[1]==="#top"?"#projects":x[1];a.style.background=bg(x[2]);$("explore").appendChild(a);
+});
+
+/* projects rail */
 projects.forEach(function(p,i){
-  var b=el("button","card");b.type="button";b.style.background=bg(p.h);
-  b.innerHTML='<span class="svc">'+p.svc+'</span><span class="n">'+(i+1)+'</span><h3>'+p.t+'</h3><p>'+p.tag+'</p>';
-  b.setAttribute("aria-label","Open "+p.t);
-  b.onclick=function(){openModal(p)};
-  rail.appendChild(b);
-});
-skills.forEach(function(s){
-  var g=el("div","genre");g.appendChild(el("h3","",s[0]));
-  var u=el("ul","chips");s[1].forEach(function(x){u.appendChild(el("li","",x))});
-  g.appendChild(u);$("genres").appendChild(g);
-});
-seasons.forEach(function(s){
-  $("seasons").appendChild(el("div","ep","<small>"+s[0]+"</small><h3>"+s[1]+"</h3><time>"+s[2]+"</time><p>"+s[3]+"</p>"));
+  var b=el("button","card",'<span class="svc">'+p.svc+'</span><span class="n">'+(i+1)+'</span><h3>'+p.t+'</h3><p>'+p.tag+'</p>');
+  b.type="button";b.style.background=bg(p.h);b.setAttribute("aria-label","Open "+p.t);
+  b.onclick=function(){openModal(i)};$("rail").appendChild(b);
 });
 
+/* resume sheet */
+$("rp").innerHTML=projects.map(function(p){return"<p><b>"+p.t+"</b><small>"+p.s.slice(0,5).join(", ")+"</small></p>"}).join("");
+$("rs").innerHTML=skills.map(function(s){return"<p><b>"+s[0]+"</b><small>"+s[2].join(", ")+"</small></p>"}).join("");
+
+/* skill universe */
+function showGenre(i){
+  var g=skills[i];
+  [].forEach.call($("gl").children,function(b,k){b.classList.toggle("on",k===i)});
+  $("gp").innerHTML='<h3>'+g[0]+'</h3><p>'+g[2].length+' skills · '+g[1]+'</p><ul class="chips">'+g[2].map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul>';
+}
+skills.forEach(function(g,i){
+  var b=el("button","gb",'<b>'+g[0]+'</b><small>'+g[2].length+' skills · '+g[1]+'</small>');b.type="button";
+  b.onclick=b.onmouseenter=function(){showGenre(i)};$("gl").appendChild(b);
+});
+showGenre(0);
+
+/* journey */
+function showSeason(k,u){
+  var s=seasons[k];
+  [].forEach.call($("tabs").children,function(b,j){b.classList.toggle("on",j===k);b.setAttribute("aria-selected",j===k)});
+  var h='<h3 class="sh">S0'+(k+1)+' '+s.n+' <span>'+s.y+'</span></h3><p class="sub" style="margin:0">'+s.d+'</p><div class="eps">';
+  if(s.p){h+=projects.map(function(p,i){return'<button class="ep" type="button" data-p="'+i+'"><div class="art" style="background:'+bg(p.h)+'"><small>EPISODE 0'+(i+1)+'</small><b>'+p.ep+'</b></div><div class="tx"><time>'+p.svc+'</time><p>'+p.tag+'</p></div></button>'}).join("")}
+  else{h+=s.e.map(function(e,i){return'<div class="ep"><div class="art" style="background:'+bg(e[4])+'"><small>EPISODE 0'+(i+1)+'</small><b>'+e[0]+'</b></div><div class="tx"><strong>'+e[1]+'</strong><br>'+(e[2]?'<time>'+e[2]+'</time>':'')+'<p>'+e[3]+'</p></div></div>'}).join("")}
+  $("season").innerHTML=h+"</div>";
+  [].forEach.call($("season").querySelectorAll("[data-p]"),function(b){b.onclick=function(){openModal(+b.getAttribute("data-p"))}});
+  [].forEach.call($("season").querySelectorAll(".sh,.sub,.ep"),function(e,i){rv(e,Math.min(i,8)*80);if(u&&!RM){e.classList.add("in")}});
+}
+seasons.forEach(function(s,k){
+  var b=el("button","tab",'<small>SEASON 0'+(k+1)+'</small>'+s.n);b.type="button";b.setAttribute("role","tab");
+  b.onclick=function(){showSeason(k,1)};$("tabs").appendChild(b);
+});
+showSeason(3);
+
+/* project modal */
 var modal=$("modal"),lastFocus=null;
-function openModal(p){
-  lastFocus=document.activeElement;
-  $("mt").textContent=p.t;$("mtop").style.background=bg(p.h);
-  $("md").textContent=p.d;
+function openModal(i){
+  var p=projects[i];lastFocus=document.activeElement;
+  $("mt").textContent=p.t;$("mtop").style.background=bg(p.h);$("md").textContent=p.d;
+  $("mf").innerHTML=p.f.map(function(x){return"<li>"+x+"</li>"}).join("");
   $("mb").innerHTML=p.b.map(function(x){return"<li>"+x+"</li>"}).join("");
   $("mc").innerHTML=p.s.map(function(x){return"<li>"+x+"</li>"}).join("");
+  var pf=proof[i],h="";
+  if(pf.gh)h+='<a class="btn w" href="'+pf.gh+'" target="_blank" rel="noopener">GitHub repo</a>';
+  if(pf.live)h+='<a class="btn w" href="'+pf.live+'" target="_blank" rel="noopener">Live site</a>';
+  if(pf.video)h+='<a class="btn g" href="'+pf.video+'" target="_blank" rel="noopener">Watch demo</a>';
+  var sh=(pf.shots||[]).map(function(f){return'<a href="proof/'+f+'" target="_blank" rel="noopener"><img loading="lazy" src="proof/'+f+'" alt="'+p.t+' screenshot"></a>'}).join("");
+  $("mp").innerHTML=(h?'<div class="plinks">'+h+'</div>':"")+(sh?'<div class="shots">'+sh+'</div>':"");
+  $("hp").style.display=$("mp").style.display=(h||sh)?"":"none";
   modal.classList.add("on");$("close").focus();document.body.style.overflow="hidden";
 }
 function closeModal(){modal.classList.remove("on");document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
 $("close").onclick=closeModal;
 modal.onclick=function(e){if(e.target===modal)closeModal()};
-document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("on"))closeModal()});
 
-var pr=$("profiles");
+/* intro reel */
+var slides=[["PREM DHUMAL","AWS Cloud Engineer"],["6 PROJECTS","Deployed and tested on AWS"],["20+ AWS TOOLS","EC2, VPC, S3, CloudFront, RDS, DynamoDB and more"],["LINUX AND NETWORKING","Servers, DNS, subnets, SSH"],["OPEN TO ROLES","Entry-level AWS Cloud Engineer"]],rt=null,ri=0;
+slides.forEach(function(){$("rbars").appendChild(el("i","","<b></b>"))});
+function slide(){
+  if(ri>=slides.length){closeReel();return}
+  $("rh").textContent=slides[ri][0];$("rp2").textContent=slides[ri][1];
+  [].forEach.call($("rbars").children,function(b,k){b.firstChild.style.transition="none";b.firstChild.style.width=k<ri?"100%":"0"});
+  var cur=$("rbars").children[ri].firstChild;void cur.offsetWidth;cur.style.transition="width 2.6s linear";cur.style.width="100%";
+  rt=setTimeout(function(){ri++;slide()},2600);
+}
+function openReel(){ri=0;$("reel").classList.add("on");document.body.style.overflow="hidden";slide()}
+function closeReel(){clearTimeout(rt);$("reel").classList.remove("on");document.body.style.overflow=""}
+$("intro").onclick=openReel;$("rclose").onclick=closeReel;
+$("reel").onclick=function(e){if(e.target===$("reel")){clearTimeout(rt);ri++;slide()}};
+document.addEventListener("keydown",function(e){if(e.key!=="Escape")return;if(modal.classList.contains("on"))closeModal();if($("reel").classList.contains("on"))closeReel()});
+
+/* profiles + opening */
 profiles.forEach(function(p){
-  var b=el("button","prof");b.type="button";
-  b.innerHTML='<i style="background:'+p.c+'">'+p.n[0]+'</i><span>'+p.n+'</span><em>'+p.b+'</em>';
+  var inner=p.img?'<img src="prem-cut-420.webp" alt=""><b>MAIN</b>':p.ic;
+  var b=el("button","prof",'<i style="background:'+(p.img?'linear-gradient(160deg,#e5132b,#6b0a1a)':p.c)+'">'+inner+'</i><span>'+p.n+'</span><em>'+p.b+'</em>');b.type="button";
   b.onclick=function(){
-    var m=$("main").children;
-    for(var i=0;i<m.length;i++){m[i].style.order=p.o[m[i].id]}
-    $("who").classList.add("hide");document.body.style.overflow="";window.scrollTo(0,0);
+    var m=$("main").children;for(var i=0;i<m.length;i++){m[i].style.order=p.o[m[i].id]}
+    $("who").classList.add("hide");document.body.style.overflow="";window.scrollTo(0,0);heroIn();
   };
-  pr.appendChild(b);
+  $("profiles").appendChild(b);
 });
-
-var done=false;
-function toProfiles(){if(done)return;done=true;$("open").classList.add("hide");$("who").classList.remove("hide")}
+function toProfiles(){$("open").classList.add("hide");$("who").classList.remove("hide")}
 document.body.style.overflow="hidden";
-$("open").onclick=toProfiles;
-$("open").onkeydown=function(e){if(e.key==="Enter"||e.key==="Escape")toProfiles()};
-setTimeout(toProfiles,matchMedia("(prefers-reduced-motion:reduce)").matches?0:3200);
+$("play").onclick=$("skip").onclick=toProfiles;
+[].forEach.call(document.querySelectorAll("section h2"),rvh);
+grp("section > .sub",0);
+grp(".aport",0);grp(".abt blockquote",0);grp(".abt cite",0);grp(".facts > div",90);grp(".abt .chips li",60);
+grp(".paper",0);grp(".side",150);grp(".uni > *",120);grp(".tabs",0);
+grp("#rail .card",90);grp(".links .btn",90);
 $("switch").onclick=function(){$("who").classList.remove("hide");document.body.style.overflow="hidden"};
 </script>
 </body>
