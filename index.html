@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prem Dhumal | The Series</title>
+<meta name="description" content="Prem Dhumal, AWS Cloud Engineer. A cinematic portfolio where every project is an Original.">
+<meta name="theme-color" content="#07070a">
+<link rel="preload" as="image" href="prem-800.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#07070a;--ink2:#0e0e13;--ink3:#16161d;--red:#e5132b;--bone:#f4f1ec;--mist:#a7a6ad;--line:#26262f;--g:clamp(16px,4vw,56px);
+--disp:"Bebas Neue",Impact,sans-serif;--sans:"Inter",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--bone);font:400 16px/1.6 var(--sans);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.disp{font-family:var(--disp);font-weight:400;letter-spacing:.03em;line-height:.95}
+
+/* opening + profiles */
+.stage{position:fixed;inset:0;z-index:50;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+.stage.hide{display:none}
+.open h1{font-size:clamp(3.4rem,16vw,9rem);margin:0;color:var(--red);animation:rise 1.6s cubic-bezier(.22,1,.36,1) both}
+.open p{font-family:var(--disp);font-size:clamp(1.4rem,5vw,2.6rem);letter-spacing:.5em;margin:10px 0 0 .5em;animation:rise 1.6s .7s cubic-bezier(.22,1,.36,1) both}
+.open small{position:absolute;bottom:calc(28px + env(safe-area-inset-bottom,0px));color:var(--mist);font-size:.85rem}
+@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.96);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+.who h2{font-size:clamp(2.2rem,7vw,3.6rem);margin:0 0 28px;font-family:var(--disp);font-weight:400;letter-spacing:.04em}
+.profiles{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+.prof{background:none;border:0;color:var(--mist);width:128px;text-align:center;padding:0}
+.prof i{display:block;width:128px;height:128px;border-radius:8px;margin-bottom:10px;border:3px solid transparent;display:grid;place-items:center;font:400 3.4rem var(--disp);color:#fff;font-style:normal}
+.prof:hover,.prof:focus-visible{color:#fff}
+.prof:hover i{border-color:#fff}
+.prof span{display:block;font-weight:600;color:inherit}
+.prof em{display:block;font-size:.78rem;font-style:normal;line-height:1.3;margin-top:2px}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;padding:calc(12px + env(safe-area-inset-top,0px)) var(--g) 12px;background:linear-gradient(#07070aee,#07070a00)}
+nav b{font:400 1.9rem var(--disp);color:var(--red);letter-spacing:.06em;margin-right:auto}
+nav a{text-decoration:none;font-size:.9rem;color:var(--mist);font-weight:500}
+nav a:hover{color:#fff}
+nav button{background:none;border:1px solid var(--line);border-radius:4px;color:var(--mist);padding:4px 10px;font-size:.82rem}
+@media(max-width:640px){nav a{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;padding:110px var(--g) 64px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+background:radial-gradient(60vw 60vw at 85% 15%,#e5132b55,transparent 70%),radial-gradient(50vw 50vw at 0% 100%,#4b167866,transparent 70%),var(--ink)}
+.photo{position:absolute;z-index:0;top:0;right:0;width:100%;height:68svh;pointer-events:none}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:brightness(.78) contrast(1.08) saturate(.9);display:block}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--ink) 2%,transparent 55%),linear-gradient(90deg,var(--ink) 0,transparent 14%,transparent 86%,var(--ink) 100%),radial-gradient(70% 60% at 50% 30%,transparent,#07070a88)}
+.hero>*:not(.photo){position:relative;z-index:1}
+@media(min-width:900px){.photo{width:46vw;height:100svh;right:2vw}.photo img{object-position:50% 0}.photo::after{background:linear-gradient(0deg,var(--ink) 0,transparent 28%),linear-gradient(90deg,var(--ink) 0,transparent 40%,transparent 88%,var(--ink) 100%),radial-gradient(70% 60% at 50% 30%,transparent,#07070a66)}}
+.tag{color:var(--mist);font-weight:500;margin:0 0 10px}
+.hero h1{font-size:clamp(4.2rem,17vw,11rem);margin:0;text-shadow:0 2px 24px #000}
+@media(min-width:900px){.hero>*:not(.photo){max-width:52vw}}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0;color:var(--mist);font-size:.95rem}
+.meta b{color:#46d369;font-weight:600}
+.hero p.lead{max-width:52ch;text-shadow:0 1px 12px #000;margin:0 0 26px;font-size:1.05rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:5px;border:0;font-weight:700;text-decoration:none;font-size:1rem}
+.btn.w{background:#fff;color:#000}.btn.g{background:#ffffff2e;color:#fff}
+.btn:hover{opacity:.85}
+
+/* sections */
+main{display:flex;flex-direction:column}
+section{padding:48px var(--g)}
+section h2{font-size:clamp(2rem,5vw,3rem);margin:0 0 6px}
+.sub{color:var(--mist);margin:0 0 22px;max-width:60ch}
+
+/* rails */
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px var(--g) 18px;margin:0 calc(var(--g) * -1);scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.rail>*{scroll-snap-align:start;flex:0 0 auto}
+.card{width:min(74vw,270px);aspect-ratio:2/3;border-radius:8px;border:0;padding:18px;text-align:left;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .25s}
+.card:hover{transform:scale(1.05)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#000000cc)}
+.card>*{position:relative;z-index:1}
+.card .svc{position:absolute;top:16px;left:18px;z-index:1;font:400 .95rem var(--disp);letter-spacing:.12em;opacity:.85}
+.card .n{position:absolute;top:-6px;right:10px;z-index:1;font:400 7rem/1 var(--disp);color:#ffffff22}
+.card h3{font:400 2rem/1 var(--disp);letter-spacing:.03em;margin:0 0 6px}
+.card p{margin:0;font-size:.85rem;color:#ffffffcc;line-height:1.35}
+.nbadge{background:var(--red);font:400 .8rem var(--disp);letter-spacing:.1em;padding:1px 6px;border-radius:2px;position:absolute;top:14px;right:14px;z-index:1}
+
+/* skills */
+.genres{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.genre{background:var(--ink2);border:1px solid var(--line);border-radius:8px;padding:20px}
+.genre h3{font:400 1.7rem var(--disp);letter-spacing:.04em;margin:0 0 10px;color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--ink3);border-radius:999px;padding:3px 12px;font-size:.85rem;color:#dcdbe0}
+
+/* journey */
+.seasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.ep{background:var(--ink2);border:1px solid var(--line);border-radius:8px;padding:20px}
+.ep small{color:var(--red);font:400 1.1rem var(--disp);letter-spacing:.12em}
+.ep h3{margin:2px 0 2px;font-size:1.1rem}
+.ep time{color:var(--mist);font-size:.85rem}
+.ep p{color:#cfced4;margin:8px 0 0;font-size:.95rem}
+
+/* cta */
+.cta{text-align:center;padding:90px var(--g) 70px;background:radial-gradient(60vw 40vw at 50% 100%,#e5132b33,transparent 70%)}
+.cta h2{font-size:clamp(3rem,11vw,7rem)}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:24px}
+footer{text-align:center;color:var(--mist);font-size:.82rem;padding:0 var(--g) 36px}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:40;background:#000000d9;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.on{display:flex}
+.sheet{background:var(--ink2);border-radius:10px;max-width:640px;width:100%;max-height:92svh;overflow:auto;border:1px solid var(--line)}
+.sheet .top{padding:56px 26px 22px;position:relative}
+.sheet .top h3{font:400 clamp(2.4rem,8vw,3.6rem)/1 var(--disp);margin:0}
+.sheet .body{padding:0 26px 26px}
+.sheet ul{padding-left:20px;color:#d6d5da}
+.x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:#000000aa;color:#fff;font-size:1.3rem}
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="stage open" id="open" role="button" tabindex="0" aria-label="Skip intro">
+  <h1 class="disp">PREM</h1>
+  <p>THE SERIES</p>
+  <small>Tap to skip</small>
+</div>
+
+<div class="stage who hide" id="who">
+  <h2>Who's watching?</h2>
+  <div class="profiles" id="profiles"></div>
+</div>
+
+<nav aria-label="Main">
+  <b>PREM</b>
+  <a href="#projects">Originals</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  <button id="switch" type="button">Switch profile</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="photo"><img src="prem-800.webp" srcset="prem-480.webp 480w, prem-800.webp 800w" sizes="(min-width:900px) 46vw, 100vw" width="800" height="1200" alt="Prem Dhumal in a navy blazer and white shirt, standing in an office lobby" fetchpriority="high"></div>
+  <p class="tag">A cloud portfolio series</p>
+  <h1 class="disp">PREM<br>DHUMAL</h1>
+  <div class="meta"><b>Now streaming</b><span>AWS Cloud Engineer</span><span>6 Originals</span><span>Linux · Networking · Web hosting</span></div>
+  <p class="lead">Entry-level AWS engineer who deploys real applications: static sites on CloudFront, LAMP and Node.js servers on EC2, and a three-tier Java app with a private database. Earlier seasons were quality operations, research, and data reporting.</p>
+  <div class="btns">
+    <a class="btn w" href="#projects">&#9654; Watch projects</a>
+    <a class="btn g" href="Prem_Dhumal_Resume.pdf" target="_blank" rel="noopener">View resume</a>
+  </div>
+</header>
+
+<main id="main">
+  <section id="projects">
+    <h2 class="disp">Originals</h2>
+    <p class="sub">Six projects, each built and tested on AWS. Tap a poster for details.</p>
+    <div class="rail" id="rail"></div>
+  </section>
+
+  <section id="skills">
+    <h2 class="disp">Skills by genre</h2>
+    <p class="sub">Tools I use to build, host, and connect applications.</p>
+    <div class="genres" id="genres"></div>
+  </section>
+
+  <section id="journey">
+    <h2 class="disp">My journey</h2>
+    <p class="sub">Three seasons: research, contact discovery, and quality operations, then cloud.</p>
+    <div class="seasons" id="seasons"></div>
+  </section>
+
+  <section id="education">
+    <h2 class="disp">Education</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="seasons">
+      <div class="ep"><small>MBA</small><h3>Business Analytics and Marketing</h3><time>Aug 2022 to Aug 2024 · 65%</time></div>
+      <div class="ep"><small>B.COM</small><h3>Bachelor of Commerce</h3><time>May 2019 to May 2021 · 70%</time><p>Courses: MS-CIT, Tally. Languages: Marathi, Hindi, English.</p></div>
+    </div>
+  </section>
+</main>
+
+<section class="cta" id="contact">
+  <h2 class="disp">To be continued…</h2>
+  <p class="sub" style="margin:0 auto">Open to entry-level AWS Cloud Engineer roles. Let's talk.</p>
+  <div class="links">
+    <a class="btn w" href="mailto:praje925@gmail.com">Email me</a>
+    <a class="btn g" href="https://linkedin.com/in/prem-dhumal-093422243" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn g" href="https://github.com/premcloud7" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn g" href="tel:+918600368036">8600368036</a>
+  </div>
+</section>
+<footer>A fictional streaming-style portfolio. Not affiliated with any streaming service.</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <div class="sheet">
+    <div class="top" id="mtop"><button class="x" id="close" type="button" aria-label="Close">&times;</button><h3 id="mt"></h3></div>
+    <div class="body"><p id="md" style="color:#d6d5da;margin-top:0"></p><ul id="mb"></ul><ul class="chips" id="mc"></ul></div>
+  </div>
+</div>
+
+<script>
+var projects=[
+ {t:"Three-Tier Java App",svc:"EC2 · VPC · RDS",h:350,tag:"Public and private subnets, Nginx, Tomcat, MySQL.",d:"A Java web application on a three-tier architecture, with the database kept private.",b:["Configured public and private subnet architecture","Set up Nginx as a reverse proxy to Tomcat","Connected the app to RDS MySQL through JDBC"],s:["EC2","VPC","Subnets","Nginx","Tomcat","Java","RDS MySQL","JDBC"]},
+ {t:"S3 + CloudFront",svc:"S3 · CLOUDFRONT",h:215,tag:"A static site served over HTTPS.",d:"A static website hosted on S3 and delivered through CloudFront.",b:["Configured the S3 origin with Origin Access Control","Served the site over HTTPS","Verified access through the distribution URL"],s:["S3","CloudFront","OAC","HTTPS","HTML"]},
+ {t:"LAMP PHP Site",svc:"EC2 · LAMP",h:28,tag:"Dynamic PHP site with automated setup.",d:"A dynamic PHP website on Amazon Linux with a database behind it.",b:["Automated first-boot setup with User Data and Bash","Ran PHP through PHP-FPM on Apache","Verified form submissions stored in MariaDB"],s:["EC2","Amazon Linux","Apache","PHP-FPM","MariaDB","Bash","User Data"]},
+ {t:"Node.js on EC2",svc:"EC2 · NODE.JS",h:140,tag:"Express app cloned, configured, tested.",d:"A Node.js and Express application deployed on a Linux server.",b:["Cloned the source from GitHub over SSH","Installed dependencies with npm","Configured port 3000 and tested the running app"],s:["EC2","Amazon Linux 2023","Node.js","Express","npm","Git","SSH"]},
+ {t:"Linux Web Server",svc:"EC2 · APACHE",h:265,tag:"Apache on Amazon Linux 2023.",d:"A first web server on EC2, reachable from the internet.",b:["Installed and started Apache HTTPD","Opened the right ports with Security Groups","Verified the HTML page through the public IP"],s:["EC2","Apache","Security Groups","HTML"]},
+ {t:"Student Management",svc:"DYNAMODB",h:320,tag:"NoSQL table with full record operations.",d:"A student records system built on DynamoDB.",b:["Created a table with Student-ID as partition key","Added and retrieved records","Updated and deleted records"],s:["DynamoDB","NoSQL"]}
+];
+var skills=[
+ ["AWS Cloud",["EC2","AMI","EBS","Elastic IP","S3","VPC","Subnets","Internet Gateway","NAT Gateway","VPC Peering","ALB","Auto Scaling","CloudFront","CloudFormation","Elastic Beanstalk","CloudWatch","Lambda","DynamoDB","Route 53","IAM Roles","AWS CLI"]],
+ ["Linux and Networking",["Linux commands","Permissions","Users and groups","SSH","Services","OSI model","Subnetting","DNS","NAT","HTTP/HTTPS","Ports"]],
+ ["Web and Database",["Apache","Nginx","Virtual hosts","PHP","PHP-FPM","Node.js","npm","MySQL","MariaDB","SQL"]],
+ ["Tools and Strengths",["Git/GitHub","MS-CIT","Tally","Data analysis","Communication","Problem solving","Teamwork"]]
+];
+var seasons=[
+ ["Season 3","Quality Team, Cummings Company, Phaltan","Nov 2023 to Nov 2024","Checked parts, identified defects, recorded system transactions on a handheld terminal, and analyzed data for reports."],
+ ["Season 2","Contact Discovery, XDBS Worldwide","Sep 2023 to Nov 2023","Found prospect and company contacts using LinkedIn, ZoomInfo, and Seamless."],
+ ["Season 1","Business Research, Manalytics B2B ITES","May 2023 to Sep 2023","Researched organizations and key contacts and collected business information for project needs."]
+];
+var profiles=[
+ {n:"Recruiter",b:"Resume, skills and journey first",c:"#4cc9ff",o:{journey:0,education:1,skills:2,projects:3}},
+ {n:"Developer",b:"Projects and stack first",c:"#46e3a8",o:{projects:0,skills:1,journey:2,education:3}},
+ {n:"Explorer",b:"The full series, in order",c:"#e5132b",o:{projects:0,skills:1,journey:2,education:3}}
+];
+function $(i){return document.getElementById(i)}
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h)e.innerHTML=h;return e}
+function bg(h){return"linear-gradient(160deg,hsl("+h+" 70% 38%),hsl("+((h+40)%360)+" 60% 14%))"}
+
+var rail=$("rail");
+projects.forEach(function(p,i){
+  var b=el("button","card");b.type="button";b.style.background=bg(p.h);
+  b.innerHTML='<span class="svc">'+p.svc+'</span><span class="n">'+(i+1)+'</span><h3>'+p.t+'</h3><p>'+p.tag+'</p>';
+  b.setAttribute("aria-label","Open "+p.t);
+  b.onclick=function(){openModal(p)};
+  rail.appendChild(b);
+});
+skills.forEach(function(s){
+  var g=el("div","genre");g.appendChild(el("h3","",s[0]));
+  var u=el("ul","chips");s[1].forEach(function(x){u.appendChild(el("li","",x))});
+  g.appendChild(u);$("genres").appendChild(g);
+});
+seasons.forEach(function(s){
+  $("seasons").appendChild(el("div","ep","<small>"+s[0]+"</small><h3>"+s[1]+"</h3><time>"+s[2]+"</time><p>"+s[3]+"</p>"));
+});
+
+var modal=$("modal"),lastFocus=null;
+function openModal(p){
+  lastFocus=document.activeElement;
+  $("mt").textContent=p.t;$("mtop").style.background=bg(p.h);
+  $("md").textContent=p.d;
+  $("mb").innerHTML=p.b.map(function(x){return"<li>"+x+"</li>"}).join("");
+  $("mc").innerHTML=p.s.map(function(x){return"<li>"+x+"</li>"}).join("");
+  modal.classList.add("on");$("close").focus();document.body.style.overflow="hidden";
+}
+function closeModal(){modal.classList.remove("on");document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
+$("close").onclick=closeModal;
+modal.onclick=function(e){if(e.target===modal)closeModal()};
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("on"))closeModal()});
+
+var pr=$("profiles");
+profiles.forEach(function(p){
+  var b=el("button","prof");b.type="button";
+  b.innerHTML='<i style="background:'+p.c+'">'+p.n[0]+'</i><span>'+p.n+'</span><em>'+p.b+'</em>';
+  b.onclick=function(){
+    var m=$("main").children;
+    for(var i=0;i<m.length;i++){m[i].style.order=p.o[m[i].id]}
+    $("who").classList.add("hide");document.body.style.overflow="";window.scrollTo(0,0);
+  };
+  pr.appendChild(b);
+});
+
+var done=false;
+function toProfiles(){if(done)return;done=true;$("open").classList.add("hide");$("who").classList.remove("hide")}
+document.body.style.overflow="hidden";
+$("open").onclick=toProfiles;
+$("open").onkeydown=function(e){if(e.key==="Enter"||e.key==="Escape")toProfiles()};
+setTimeout(toProfiles,matchMedia("(prefers-reduced-motion:reduce)").matches?0:3200);
+$("switch").onclick=function(){$("who").classList.remove("hide");document.body.style.overflow="hidden"};
+</script>
+</body>
+</html>
