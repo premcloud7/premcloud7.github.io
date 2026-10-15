@@ -39,9 +39,9 @@ img{display:block}
 @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.97);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
 .who h2{font-size:clamp(2.4rem,7vw,4rem);margin:0 0 28px;letter-spacing:.04em}
 .profiles{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:760px}
-.prof{background:none;border:0;color:var(--mist);width:132px;text-align:center;padding:0}
-.prof i{display:grid;place-items:center;width:132px;height:132px;border-radius:8px;margin-bottom:10px;border:3px solid transparent;font:400 3.2rem var(--disp);font-style:normal;color:#fff;position:relative;overflow:hidden}
-.prof i img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:118%;width:auto}
+.prof{background:none;border:0;color:var(--mist);width:156px;text-align:center;padding:0}
+.prof i{display:grid;place-items:center;width:156px;height:156px;border-radius:8px;margin-bottom:10px;border:3px solid transparent;font:400 3.2rem var(--disp);font-style:normal;color:#fff;position:relative;overflow:hidden}
+.prof i img{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:150%;max-width:none;height:auto}
 .prof i b{position:absolute;top:6px;right:6px;background:var(--red);font:400 .7rem var(--disp);letter-spacing:.1em;padding:0 6px;border-radius:2px}
 .prof:hover,.prof:focus-visible{color:#fff}.prof:hover i{border-color:#fff}
 .prof span{display:block;font-weight:600;color:inherit}
@@ -362,9 +362,7 @@ var seasons=[
 ];
 var profiles=[
  {n:"Prem",b:"The full series, in order",c:"#e5132b",img:1,o:{about:0,journey:1,projects:2,skills:3,resume:4}},
- {n:"Recruiter",b:"Resume, skills and projects first",c:"#4cc9ff",ic:"R",o:{resume:0,skills:1,projects:2,about:3,journey:4}},
- {n:"Developer",b:"Projects and stack first",c:"#46e3a8",ic:"</>",o:{projects:0,skills:1,journey:2,about:3,resume:4}},
- {n:"Creative",b:"The story arc first",c:"#f0a030",ic:"\u2726",o:{journey:0,about:1,projects:2,skills:3,resume:4}}
+ {n:"Recruiter",b:"Resume, skills and projects first",c:"#4cc9ff",ic:"R",o:{resume:0,skills:1,projects:2,about:3,journey:4}}
 ];
 var explore=[["The Full Story","#resume",270,"01"],["About Me","#about",350,"02"],["My Skills","#skills",215,"03"],["My Projects","#top",28,"04"],["My Journey","#journey",140,"05"]];
 
